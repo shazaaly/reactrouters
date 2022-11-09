@@ -1,10 +1,17 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useSearchParams } from 'react-router-dom'
 
 export const Book = () => {
 
-  const {id} = useParams()
+  const { id } = useParams()
+
   return (
-    <h2>Book {id}</h2>
+    <>
+      <h2>Book {id}</h2>
+
+
+    </>
+
+
   )
 }

@@ -1,5 +1,6 @@
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
+import './styles.css'
 import { Home } from './pages/Home';
 import { BookList } from './pages/BookList';
 import { Book } from './pages/Book';
@@ -8,18 +9,19 @@ import { NotFound } from './pages/NotFound';
 import { BooksLinks } from './BooksLinks';
 
 function App() {
+
   return (
 
     <>
 
-
       <nav>
         <ul>
           <li>
-            <Link to='/'>Home</Link>
+            <NavLink end to='/'>Home</NavLink>
+
           </li>
           <li>
-            <Link to='/books'>Books List</Link>
+            <NavLink end to='/books'>Books List</NavLink>
           </li>
 
 
@@ -34,12 +36,12 @@ function App() {
         </Route>
 
         <Route path='/books' element={<BooksLinks />}>
-          <Route element={<BooksLinks />}>
+          {/* <Route element={<BooksLinks />}> */}
             <Route path=':id' element={<Book />} />
             <Route index element={<BookList />} />
             <Route path='new' element={<NewBook />} />
 
-          </Route>
+          {/* </Route> */}
 
 
         </Route>

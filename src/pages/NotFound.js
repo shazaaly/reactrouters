@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 export const NotFound = () => {
+
+  const navigate = useNavigate()
   return (
-    <div>NotFound 404 </div>
+    <>
+      { 
+        useEffect( ()=>{
+          navigate(-1)
+
+        }, [])
+        
+      }
+    </>
   )
 }
